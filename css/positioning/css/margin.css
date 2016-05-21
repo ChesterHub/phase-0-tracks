@@ -1,0 +1,20 @@
+html {
+	background-color: #3333ff;
+}
+#octopus {
+	position: absolute;
+	margin: 100px 500px;
+	z-index: 0
+}
+
+#hat {
+	position: absolute;
+	margin: 55px 475px;
+	z-index: 2
+}
+
+#glasses {
+	position: absolute;
+		margin: 200px 540px;
+	z-index: 1
+}
