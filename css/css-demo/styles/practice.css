@@ -1,0 +1,21 @@
+#contact-info {
+	 font-size: 80%;
+}
+.job {
+	background-color: #e9e5dc;
+	border-radius: 25px;
+	padding-bottom: 10px;
+}
+
+.list {
+	font-size: .8em;
+}
+
+li::first-letter {
+  font-size: 150%;
+   color: #8A2BE2;
+}
+
+#volunteer-experience > section > h3 {
+	background-color: #7300e6;
+}
