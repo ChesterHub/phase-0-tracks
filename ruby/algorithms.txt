@@ -1,0 +1,29 @@
+Elevator Algorithm
+- When elevator door is opened
+	-Until floor button is pressed, or until 20 seconds:
+		-keep door open (with up or down selected)
+	-If a floor button is pressed
+		- Until 5 seconds have passed:
+			- Keep door open
+			- activate door obstacle sensor
+	-Close the door
+	-Travel to selected floor.
+	- Open the door.
+
+	- If no floor button is pressed:
+		-Activate door obstacle sensor
+		- Close elevator door
+		- Reset Up or down selection
+
+
+Real Life Waking Up Algorithm
+ -After waking up from sleep
+ 	- If I have to work today:
+ 		- Brush up
+ 		- get dressed for work
+ 	- Else
+ 		- Lay in bed
+ 		- Check email
+ 		- Check phone
+
+
