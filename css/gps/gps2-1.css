@@ -1,3 +1,55 @@
 body {
-	background-color: green;
+	background-image: url("http://www.psdgraphics.com/file/dark-metal-texture.jpg");
+	font-family: Arial;
+}
+
+header {
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	margin: 5px 150px;
+	color: #DFBFF2;
+
+}
+
+#title {
+	font-style: italic;
+	color: #401BF7;
+}
+
+a:link {
+	color: #0058B5;
+	font-style: bold;
+}
+
+
+footer {
+	display: inline-block;
+	text-align: center;
+	color: #DFBFF2;
+	margin: 5px 650px;
+	padding-top: 1%;
+}
+
+.column-1 {
+	display: inline-block;
+	position: relative;
+	width: 35%;
+	margin-left: 6%;
+	padding-left: 1%;
+	padding-bottom: 1%;
+	border: 2px dashed black;
+	background-color: #9BAFBA;
+
+}
+
+.column-2 {
+	display: inline-block;
+	position: relative;
+	width: 35%;
+	margin-left: 6%;
+	padding-left: 1%;
+	padding-bottom: 1%;
+	border: 2px dashed black;
+	background-color: #9BAFBA;
 }
