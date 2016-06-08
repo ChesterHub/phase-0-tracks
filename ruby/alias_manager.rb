@@ -1,41 +1,70 @@
-#<- Pseudocode
-#1.Take a persons name
-#2 Swap the first and last name
-#3 Change all the vowels of the string
-#4
-
-def name_swap(firstname, lastname)
-	fullname = lastname + " " + firstname
+def name_swap(fullname)
 	fullname.downcase!
 	fullname = fullname.split(" ")
-	#fullname = [fullname[0].split(""),fullname[1].split("")]
-	fullname.class
-	p fullname
+	fullname.reverse
 end
 
-name = name_swap("Cheddar","Han")
-
-def letter_changes(array)
-	vowels = "aeiou"
-	i = 0
-	lastname = array[0]
-	until i == lastname.length
-		if lastname[i] == "u"
-			lastname[i] = "a"
-		elsif	
-			lastname[i] == vowels[vowels.index(lastname[i])]
-			lastname[i] =  vowels[vowels.index(lastname[i]) + 1]
-		else 
-			lastname[i] = lastname[i].next
-		end
-		i += 1
-		
+def vowel_change(swapped_name)
+	swapped_name.map! do |vowel|
+		vowel.gsub(/[aeiou]/, 
+			"a" => "e",
+			"e" => "i",
+			"i" => "o",
+			"o" => "u",
+			"u" => "a",
+			) 
 	end
-	p lastname
 end
 
-letter_changes(name)
+def character_change(changed_vowels)
+	changed_vowels.map! do |character|
+		character.gsub(/[bcdfghjklmnpqrstvwxyz]/, 
+			"b" => "c",
+			"c" => "d",
+			"d" => "e",
+			"f" => "i",
+			"g" => "h",
+			"h" => "i",
+			"j" => "k",
+			"k" => "l",
+			"l" => "m",
+			"m" => "n",
+			"n" => "o",
+			"p" => "q",
+			"q" => "r",
+			"r" => "s",
+			"s" => "t",
+			"t" => "u",
+			"v" => "w",
+			"w" => "x",
+			"x" => "y",
+			"y" => "z",
+			"z" => "a",
+			) 
+	end
+end
 
+def name_entry(entry)
+	swapped_name = name_swap(entry)
+	changed_vowels = vowel_change(swapped_name)
+	changed_characters = character_change(changed_vowels)
+	secret_name = changed_characters.join(' ')
+end
 
+def name
+	list = []
+	answer = ""
+	until answer == "N" || answer == "n"
+		puts "Give me a name and I will give you a secret identity."
+		entry = gets.chomp
+		realname = entry
+		list << "#{realname}'s secret identity is #{name_entry(entry)}.\n"
+		puts "Do you want to enter another name? Y/N"
+		answer = gets.chomp
+	end
+	puts allnames = list.join(" ") 
+end
+
+name
 
 
