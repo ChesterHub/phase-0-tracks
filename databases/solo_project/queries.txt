@@ -1,0 +1,87 @@
+$ sqlite3 Cars.db
+SQLite version 3.8.7.2 2014-11-18 20:57:56
+Enter ".help" for usage hints.
+sqlite> .tables
+Car_companies  Car_models
+sqlite> select * from car_models;
+1|2005|Civic Si|2
+2|2017|GS-F|3
+3|2015|435i|1
+4|2008|M5|1
+5|2007|Pilot EX-L|2
+6|2014|IS 350|3
+7|2016|RX 450h|3
+8|2010|X6|1
+9|200|Accord Sport|2
+
+sqlite> .schema
+CREATE TABLE Car_companies (id integer primary key, brand varchar(255), European
+ BOOLEAN);
+CREATE TABLE Car_models (id integer primary key, Year Int, Vehicle_name varchar(
+255), company_id int);
+
+sqlite> update car_models set year=2011 where Vehicle_name="Pilot Ex-L";
+sqlite> Select * from car_companies, car_models where car_models.id = car_compan
+ies.id;
+1|BMW|true|1|2005|Civic Si|2
+2|Honda|false|2|2017|GS-F|3
+3|Lexus|false|3|2015|435i|1
+
+sqlite> select * from car_models, car_companies where car_companies.id = car_mod
+els.company_id;
+1|2005|Civic Si|2|2|Honda|false
+2|2017|GS-F|3|3|Lexus|false
+3|2015|435i|1|1|BMW|true
+4|2008|M5|1|1|BMW|true
+5|2007|Pilot EX-L|2|2|Honda|false
+6|2014|IS 350|3|3|Lexus|false
+7|2016|RX 450h|3|3|Lexus|false
+8|2010|X6|1|1|BMW|true
+9|200|Accord Sport|2|2|Honda|false
+
+sqlite> select car_models.vehicle_name, car_companies.brand from car_models join
+ car_companies on car_models.company_id = car_companies.id;
+Civic Si|Honda
+GS-F|Lexus
+435i|BMW
+M5|BMW
+Pilot EX-L|Honda
+IS 350|Lexus
+RX 450h|Lexus
+X6|BMW
+Accord Sport|Honda
+
+sqlite> select car_models.year, car_models.vehicle_name, car_companies.brand fro
+m car_models join car_companies on car_models.company_id = car_companies.id;
+2005|Civic Si|Honda
+2017|GS-F|Lexus
+2015|435i|BMW
+2008|M5|BMW
+2007|Pilot EX-L|Honda
+2014|IS 350|Lexus
+2016|RX 450h|Lexus
+2010|X6|BMW
+200|Accord Sport|Honda
+
+sqlite> delete from car_models where year=200;
+sqlite> select * from car_models;
+1|2005|Civic Si|2
+2|2017|GS-F|3
+3|2015|435i|1
+4|2008|M5|1
+5|2007|Pilot EX-L|2
+6|2014|IS 350|3
+7|2016|RX 450h|3
+8|2010|X6|1
+
+sqlite> select car_models.year, car_companies.brand, car_models.vehicle_name FRO
+M car_models INNER JOIN car_companies ON car_models.company_id = car_companies.i
+d;
+2005|Honda|Civic Si
+2017|Lexus|GS-F
+2015|BMW|435i
+2008|BMW|M5
+2007|Honda|Pilot EX-L
+2014|Lexus|IS 350
+2016|Lexus|RX 450h
+2010|BMW|X6
