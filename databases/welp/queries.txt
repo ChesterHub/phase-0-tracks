@@ -1,0 +1,34 @@
+sqlite> SELECT businesses.name, reviews.comment, users.lname FROM businesses, us
+ers JOIN reviews ON businesses.id = reviews.business_id;
+
+Pet Paradise|A great place for pet products|han
+Pet Paradise|A great place for pet products|wonderland
+Pet Paradise|A great place for pet products|elliot
+Pet Paradise|A great place for pet products|johnson
+Koala Express|Good Koala, but I'm eating wild animals!|han
+Koala Express|Good Koala, but I'm eating wild animals!|wonderland
+Koala Express|Good Koala, but I'm eating wild animals!|elliot
+Koala Express|Good Koala, but I'm eating wild animals!|johnson
+Joe's Haircut|JOE DOES NOT KNOW HOW TO CUT HAIR|han
+Joe's Haircut|JOE DOES NOT KNOW HOW TO CUT HAIR|wonderland
+Joe's Haircut|JOE DOES NOT KNOW HOW TO CUT HAIR|elliot
+Joe's Haircut|JOE DOES NOT KNOW HOW TO CUT HAIR|johnson
+Mexican hut|The portions for burritoes are MASSIVE|han
+Mexican hut|The portions for burritoes are MASSIVE|wonderland
+Mexican hut|The portions for burritoes are MASSIVE|elliot
+Mexican hut|The portions for burritoes are MASSIVE|johnson
+
+
+sqlite> SELECT users.fname, users.lname, businesses.name, reviews.stars, reviews
+.comment FROM users JOIN reviews ON users.id = reviews.user_id, businesses ON bu
+sinesses.id = reviews.business_id;
+
+Cheddar|han|Pet Paradise|4|A great place for pet products
+missy|elliot|Koala Express|3|Good Koala, but I'm eating wild animals!
+alice|wonderland|Joe's Haircut|1|JOE DOES NOT KNOW HOW TO CUT HAIR
+Dwayne|johnson|Mexican hut|5|The portions for burritoes are MASSIVE
+
+
+sqlite> SELECT users.fname, users.lname, businesses.name, reviews.stars, reviews.comment FROM users JOIN reviews ON users.id = reviews.user_id, businesses ON businesses.id = reviews.business_id WHERE businesses.name="Mexican hut";
+
+Dwayne|johnson|Mexican hut|5|The portions for burritoes are MASSIVE
