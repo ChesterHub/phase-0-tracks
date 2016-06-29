@@ -20,7 +20,8 @@ CREATE TABLE Car_companies (id integer primary key, brand varchar(255), European
 CREATE TABLE Car_models (id integer primary key, Year Int, Vehicle_name varchar(
 255), company_id int);
 
-sqlite> update car_models set year=2011 where Vehicle_name="Pilot Ex-L";
+sqlite> update car_models set year=2011 where Vehicle_name="Pilot EX-L";
+
 sqlite> Select * from car_companies, car_models where car_models.id = car_compan
 ies.id;
 1|BMW|true|1|2005|Civic Si|2
